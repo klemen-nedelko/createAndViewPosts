@@ -7,10 +7,11 @@ export const StarRating = ({item, getRating}) => {
     let getArticle = localStorage.getItem("article");
     let dataArray = JSON.parse(getArticle);
 
-    if (dataArray && dataArray[item]) {
-        dataArray[item].stars = rating;
+    if (dataArray && dataArray[item - 1]) {
+        dataArray[item - 1].stars = rating;
         getArticle = JSON.stringify(dataArray);
         localStorage.setItem('article', getArticle);
+        window.location.reload();
       }
 
     return (

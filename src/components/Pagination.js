@@ -13,23 +13,23 @@ export const Pagination = ({postsPerPage, totalPosts, paginate, currentPage}) =>
 
   return (
     <>
-      <ul className="pagination m-3">
+      <ul className="pagination m-3 float-end">
         {
           currentPage > 1 && (
-            <Button className="btn-link"  variant="link" onClick={() => paginate(currentPage -1)}>
-              <FontAwesomeIcon size="2x" icon={faChevronLeft}/>
+            <Button className="btn-link"variant="link" onClick={() => paginate(currentPage -1)}>
+              <FontAwesomeIcon size="2x"  color="black" icon={faChevronLeft}/>
             </Button>
           )
         }
           {pageNumbers.map(number => (
-                <li key={number} className={`${currentPage === number ? 'active' : ''}`}>
+                <li key={number} className={`${currentPage === number ? 'active' : 'paginationCustom'} `}>
                     <Button onClick={() => paginate(number)}  variant="link" className="page-link">{number}</Button>
                 </li>
             ))}
             {
               currentPage < pageNumbers.length &&(
-                <Button className="btn-link"  variant="link" onClick={() => paginate(currentPage +1)}>
-                  <FontAwesomeIcon size="2x" icon={faChevronRight}/>
+                <Button className="btn-link"   variant="link" onClick={() => paginate(currentPage +1)}>
+                  <FontAwesomeIcon size="2x" color="black" icon={faChevronRight}/>
               </Button>
               )
             }

@@ -11,7 +11,6 @@ export const Confirmation = () => {
 
   const handleButton = (e) =>{
     e.preventDefault();
-    console.log("submited")
     navigate("/");
   } 
 

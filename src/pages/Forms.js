@@ -5,12 +5,14 @@ import { Form, Button } from 'react-bootstrap';
 
 export function Forms(){
 
+    const id = localStorage.hasOwnProperty('article') ? JSON.parse(localStorage.getItem('article')).length + 1 : 1;
     const [name, setName] = useState("");
     const [surname, setSurname] = useState("");
     const [address, setAddress] = useState("");
     const [message, setMessage] = useState("");
     const navigate = useNavigate();
     const article = {
+        id: id,
         name: name,
         surname: surname,
         address: address,

@@ -1,9 +1,18 @@
+:root{
+    --mainColor: rgb(70,92,255);
+    --black: black;
+    --fontSize: 22px;
+}
+
+
 body{
-    background: rgb(70,92,255);
-    background: linear-gradient(90deg, rgba(70,92,255,1) 0%, rgba(0,103,233,1) 100%);
+    background: var(--mainColor);
+    background: linear-gradient(90deg, var(--mainColor) 0%, rgba(0,103,233,1) 100%);
 }
 .highlight{
-    color: rgb(70,92,255);
+    color: var(--mainColor);
+    font-weight: bold;
+    font-size: 15px;
 }
 
 input[type="radio"]{
@@ -11,6 +20,21 @@ input[type="radio"]{
 }
 .active {
     font-weight: bold;
-    color: blue;
+    color: var(--mainColor);
   }
+.bold {
+    font-weight: bold;
+}
+.active>.page-link, .page-link.active{
+    font-size: var(--fontSize);
+    border:none;
+    color: var(--black) !important;
+    background-color: transparent !important;
+}
+.paginationCustom>.page-link, .page-link.paginationCustom{
+    font-size: var(--fontSize);
+    border:none !important;
+    color: var(--mainColor) !important;
+    background-color: transparent !important;
+}
 

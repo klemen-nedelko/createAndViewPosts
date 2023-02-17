@@ -15,7 +15,7 @@ export const ApplicationSubmision = () => {
     const startIndex = (currentPage - 1) * postsPerPage;
     const indexOfLastPost = startIndex + postsPerPage;
     const indeOfFirstPost = startIndex; 
-    const currentPost = info.slice(indeOfFirstPost, indexOfLastPost);
+    const currentPost = info === null ? null : info.slice(indeOfFirstPost, indexOfLastPost);
 
 
     const paginate = (pageNumbers) => setCurrentPage(pageNumbers);
@@ -42,7 +42,7 @@ export const ApplicationSubmision = () => {
                     <Card.Body>
                     <h1 className="mb-5">Prejete vloge</h1>    
                     {
-                        currentPost.length === 0 ? 
+                        currentPost === null ?
                         <Alert variant='danger'>
                             <h3 className="m-2 highlight">No articels!</h3>
                         </Alert>:

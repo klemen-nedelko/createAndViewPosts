@@ -5,6 +5,7 @@ import { StarRating } from './StarRating';
 export const Articles = ({articles, startIndex}) => {
 
     const [selectedIdx, setSelectedIdx] = useState(null);
+
     function handleElementClick(idx){
         setSelectedIdx(idx);
     }
@@ -30,13 +31,13 @@ export const Articles = ({articles, startIndex}) => {
                     </Row>
                     <Row>
                         <Col className='col-3'>
-                                <p className="float-start">{item.name}</p>
+                                <p className="float-start bold">{item.name}</p>
                         </Col>
                         <Col className='col-3'>
-                                <p className="float-start">{item.surname}</p>
+                                <p className="float-start bold">{item.surname}</p>
                         </Col>
                         <Col className='col-6'>
-                                <p className="float-start">{item.address}</p>
+                                <p className="float-start bold">{item.address}</p>
                         </Col>
                     </Row>
                     <Row>
@@ -44,14 +45,14 @@ export const Articles = ({articles, startIndex}) => {
                         <hr/>
                         <Row className="aling-middle">
                             <Col className="mt-auto mb-auto col-2">
-                                <p className="highlight mt-auto mb-auto float-start"> Oceni vlogo:</p>
+                                <p className="highlight mt-auto mb-auto"> Oceni vlogo:</p>
                             </Col>
 
                         <Col className="float-start col-9">
-                            <Button onClick={() => handleElementClick(idx)} style={{backgroundColor:"transparent", borderColor:"transparent", float:'left'}}>
+                            <Button onClick={() => handleElementClick(item.id)} style={{backgroundColor:"transparent", borderColor:"transparent", float:'left'}}>
                                 <StarRating
                                     getRating={item.stars}
-                                    item={(selectedIdx + startIndex)}
+                                    item={(selectedIdx)}
                                 />
                            </Button>
                            </Col>
@@ -61,7 +62,7 @@ export const Articles = ({articles, startIndex}) => {
                     </Col>
                     <Col xs={12} xl={4} lg={4} md={4} sm={4}>
                     <p className="highlight">Opis</p>
-                            <p className="m-auto" style={{maxWidth: '200px', textAlign:'center'}}>{item.message}</p>
+                            <p className="m-auto  bold" style={{maxWidth: '200px', textAlign:'center'}}>{item.message}</p>
                     </Col>
                 </Row>
                 </Container>
