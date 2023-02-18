@@ -17,7 +17,6 @@ export const ApplicationSubmision = () => {
     const indeOfFirstPost = startIndex; 
     const currentPost = info === null ? null : info.slice(indeOfFirstPost, indexOfLastPost);
 
-
     const paginate = (pageNumbers) => setCurrentPage(pageNumbers);
 
 
