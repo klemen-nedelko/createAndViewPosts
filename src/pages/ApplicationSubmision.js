@@ -23,9 +23,9 @@ export const ApplicationSubmision = () => {
     useEffect( () => {
         if(localStorage.getItem("role") == null || localStorage.getItem("role") === "undefined")
         {
-            navigate("/");
+            navigate("/login");
         }else if(localStorage.getItem("role").replace(/['"]+/g, '') !== "admin") {
-            navigate("/");
+            navigate("/login");
         }
         setInfo(JSON.parse(localStorage.getItem('article')));
     },[navigate]);

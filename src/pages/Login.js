@@ -39,7 +39,7 @@ const Login = () => {
                     localStorage.setItem("isAuthenticated", true);
                 
                     if(localStorage.getItem("role").replace(/['"]+/g, '')  === "admin") {                
-                        navigate("/submisions");
+                        navigate("/admin");
                     }else if(localStorage.getItem("role").replace(/['"]+/g, '')  !== "admin") {
                         setError("You cannot access to this information");
                     }
@@ -54,7 +54,7 @@ const Login = () => {
     useEffect(()=>{
 
         if(localStorage.getItem("isAuthenticated")){
-            navigate("/submisions");
+            navigate("/admin");
         }
 
     });

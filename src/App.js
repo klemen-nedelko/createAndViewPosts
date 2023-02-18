@@ -16,8 +16,8 @@ function App() {
     <Routes>
         <Route path="/"  element={<Forms/>}/>
         <Route path="/confirm"  element={<Confirmation/>}/>
-        <Route exact path="/admin"  element={<Login/>}/>
-        <Route exact path="/submisions" element={<ApplicationSubmision/>} />
+        <Route exact path="/login"  element={<Login/>}/>
+        <Route exact path="/admin" element={<ApplicationSubmision/>} />
     </Routes>
     </BrowserRouter>
     );

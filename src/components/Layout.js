@@ -11,10 +11,10 @@ const Layout = ({children, setWidth}) => {
 
     const sendToLogin = (e)=> {
         e.preventDefault();
-        navigate("/admin");
+        navigate("/login");
     }
     useEffect(() =>{
-        if(location.pathname === "/admin" || location.pathname ==="/submisions"){
+        if(location.pathname === "/login" || location.pathname ==="/admin"){
             setIsThatPage(false);
         }
     },[location])
