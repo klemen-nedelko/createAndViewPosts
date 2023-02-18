@@ -38,7 +38,8 @@ const Login = () => {
                     localStorage.setItem("role", JSON.stringify(userData.role));
                     localStorage.setItem("isAuthenticated", true);
                 
-                    if(localStorage.getItem("role").replace(/['"]+/g, '')  === "admin") {                
+                    if(localStorage.getItem("role").replace(/['"]+/g, '')  === "admin") {    
+                        localStorage.setItem("jeAdmin", true);            
                         navigate("/admin");
                     }else if(localStorage.getItem("role").replace(/['"]+/g, '')  !== "admin") {
                         setError("You cannot access to this information");
@@ -63,6 +64,7 @@ const Login = () => {
         localStorage.removeItem('username');
         localStorage.removeItem('role');
         localStorage.removeItem('isAuthenticated');
+        localStorage.removeItem('jeAdmin');
 
       }, 24 * 60 * 60 * 1000);
 
