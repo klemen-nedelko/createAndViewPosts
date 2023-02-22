@@ -43,6 +43,7 @@ const Login = () => {
                         navigate("/admin");
                     }else if(localStorage.getItem("role").replace(/['"]+/g, '')  !== "admin") {
                         setError("You cannot access to this information");
+                        setShowError(true);
                     }
             } else {
                 setError("Username or password is incorrect");
@@ -53,12 +54,16 @@ const Login = () => {
             setPassword('');
     }
     useEffect(()=>{
-
-        if(localStorage.getItem("isAuthenticated")){
+        if(localStorage.getItem("isAuthenticated") && localStorage.getItem("jeAdmin")){
             navigate("/admin");
+        }else{
+            localStorage.removeItem('username');
+            localStorage.removeItem('role');
+            localStorage.removeItem('isAuthenticated');
+            localStorage.removeItem('jeAdmin');
         }
 
-    });
+    },[error, navigate]);
     setTimeout(() => {
 
         localStorage.removeItem('username');
@@ -108,7 +113,7 @@ const Login = () => {
             </Form>
             {
                 showError ?
-                <Alert variant='danger' >
+                <Alert variant='danger'  className="mx-auto mt-3">
                     {error}
                 </Alert> : ""
             }
