@@ -1,3 +1,13 @@
+//Dostop
+Admin:
+uporabnisko ime: admin
+geslo: klemen
+
+Navadni uporabnik
+uporabnisko ime: klemen
+geslo: klemen
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
